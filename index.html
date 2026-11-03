@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBTI 人格测试</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="glow glow-pink" aria-hidden="true"></div>
+  <div class="glow glow-lime" aria-hidden="true"></div>
+  <div class="glow glow-orange" aria-hidden="true"></div>
+
+  <main class="card start" id="start">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 140 124" width="88" height="78">
+        <defs>
+          <linearGradient id="start-g-top" gradientUnits="userSpaceOnUse" x1="30" y1="10" x2="120" y2="40">
+            <stop offset="0" stop-color="#F04B8A"/>
+            <stop offset="0.5" stop-color="#F26A3A"/>
+            <stop offset="1" stop-color="#E8B423"/>
+          </linearGradient>
+          <linearGradient id="start-g-left" gradientUnits="userSpaceOnUse" x1="20" y1="110" x2="70" y2="20">
+            <stop offset="0" stop-color="#C6D63C"/>
+            <stop offset="0.55" stop-color="#E8B423"/>
+            <stop offset="1" stop-color="#3D4A22"/>
+          </linearGradient>
+          <linearGradient id="start-g-right" gradientUnits="userSpaceOnUse" x1="120" y1="20" x2="40" y2="110">
+            <stop offset="0" stop-color="#F04B8A"/>
+            <stop offset="0.5" stop-color="#F26A3A"/>
+            <stop offset="1" stop-color="#2C2924"/>
+          </linearGradient>
+        </defs>
+        <path d="M70 28 L36 92" stroke="url(#start-g-left)" stroke-width="11" stroke-linecap="round"/>
+        <path d="M70 28 L104 92" stroke="url(#start-g-right)" stroke-width="11" stroke-linecap="round"/>
+        <path d="M36 92 H104" stroke="url(#start-g-top)" stroke-width="11" stroke-linecap="round"/>
+        <circle cx="70" cy="22" r="15" fill="url(#start-g-top)"/>
+        <circle cx="30" cy="96" r="15" fill="url(#start-g-left)"/>
+        <circle cx="110" cy="96" r="15" fill="url(#start-g-right)"/>
+      </svg>
+    </div>
+    <h1 class="start-title">MBTI 人格测试</h1>
+    <p class="start-sub">20 道题，测出你真实的性格倾向。</p>
+    <button class="start-btn" id="start-btn" type="button">开始测试</button>
+  </main>
+
+  <main class="card" id="test" hidden>
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 140 124" width="88" height="78">
+        <defs>
+          <linearGradient id="g-top" gradientUnits="userSpaceOnUse" x1="30" y1="10" x2="120" y2="40">
+            <stop offset="0" stop-color="#F04B8A"/>
+            <stop offset="0.5" stop-color="#F26A3A"/>
+            <stop offset="1" stop-color="#E8B423"/>
+          </linearGradient>
+          <linearGradient id="g-left" gradientUnits="userSpaceOnUse" x1="20" y1="110" x2="70" y2="20">
+            <stop offset="0" stop-color="#C6D63C"/>
+            <stop offset="0.55" stop-color="#E8B423"/>
+            <stop offset="1" stop-color="#3D4A22"/>
+          </linearGradient>
+          <linearGradient id="g-right" gradientUnits="userSpaceOnUse" x1="120" y1="20" x2="40" y2="110">
+            <stop offset="0" stop-color="#F04B8A"/>
+            <stop offset="0.5" stop-color="#F26A3A"/>
+            <stop offset="1" stop-color="#2C2924"/>
+          </linearGradient>
+        </defs>
+        <path d="M70 28 L36 92" stroke="url(#g-left)" stroke-width="11" stroke-linecap="round"/>
+        <path d="M70 28 L104 92" stroke="url(#g-right)" stroke-width="11" stroke-linecap="round"/>
+        <path d="M36 92 H104" stroke="url(#g-top)" stroke-width="11" stroke-linecap="round"/>
+        <circle cx="70" cy="22" r="15" fill="url(#g-top)"/>
+        <circle cx="30" cy="96" r="15" fill="url(#g-left)"/>
+        <circle cx="110" cy="96" r="15" fill="url(#g-right)"/>
+      </svg>
+    </div>
+
+    <section id="quiz">
+      <p class="progress-text" id="progress-text"></p>
+      <div class="bar"><div class="bar-fill" id="bar-fill"></div></div>
+      <h1 class="question" id="question"></h1>
+      <div class="options" id="options"></div>
+      <button class="back-btn" id="back-btn" type="button" hidden>← 上一题</button>
+    </section>
+
+    <section id="result" hidden>
+      <p class="result-title">你的 MBTI 类型是</p>
+      <h2 class="result-type" id="result-type"></h2>
+      <div class="dimensions" id="dimensions" aria-label="维度倾向"></div>
+      <p class="result-desc" id="result-desc"></p>
+      <button class="restart" id="restart">重新测试</button>
+    </section>
+  </main>
+
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>
